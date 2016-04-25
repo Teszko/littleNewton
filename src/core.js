@@ -1,3 +1,6 @@
+/**
+ * @author Henryk Iwaniuk / b.iwaniuk@campus.tu-berlin.de
+ */
 
 NEWTON.World = function () {
     this.__bodies = [];

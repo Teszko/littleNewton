@@ -1,3 +1,6 @@
+/**
+ * @author Henryk Iwaniuk / b.iwaniuk@campus.tu-berlin.de
+ */
 
 NEWTON.v3d =  function (x, y, z) {
     this.x = x || 0;
