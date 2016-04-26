@@ -1,5 +1,10 @@
 /**
  * @author Henryk Iwaniuk / b.iwaniuk@campus.tu-berlin.de
+ *
+ * v3d is a vector implementation that tries to be compatible with any object
+ * with the following layout: {x: 0, y: 0, z: 0}
+ * That includes THREE.Vector3
+ *
  */
 
 NEWTON.v3d =  function (x, y, z) {
