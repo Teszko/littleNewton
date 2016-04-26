@@ -6,9 +6,19 @@ NEWTON.World = function () {
     this.__bodies = [];
 };
 
+NEWTON.World.prototype = {
+    constructor: NEWTON.World
+};
+
 NEWTON.World.prototype.add = function (obj) {
     this.__bodies.push(obj);
     return obj;
+};
+
+NEWTON.World.prototype.step = function (dt) {
+    for (var i=0; i<this.__bodies.length; i++) {
+
+    }
 };
 
 

@@ -21,6 +21,8 @@ NEWTON.v3d.prototype.set = function (x, y, z) {
     this.x = x !== undefined ? x : this.x;
     this.y = y !== undefined ? y : this.y;
     this.z = z !== undefined ? z : this.z;
+
+    return this;
 };
 
 NEWTON.v3d.prototype.multiply = function (a) {

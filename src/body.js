@@ -16,4 +16,10 @@ NEWTON.Body = function () {
 NEWTON.Body.prototype = Object.create(NEWTON.Object3D.prototype);
 NEWTON.Body.prototype.constructor = NEWTON.Body;
 
-NEWTON.Body.
+NEWTON.Body.prototype.applyForce = function (F) {
+    if (NEWTON.isVector(F)) {
+        this.force.add(F);
+    }
+    
+    return this;
+};
