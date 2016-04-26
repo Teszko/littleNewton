@@ -9,6 +9,7 @@
 
 NEWTON.v3d =  function (x, y, z) {
     this.type = 'v3d';
+
     this.x = x || 0;
     this.y = y || 0;
     this.z = z || 0;
