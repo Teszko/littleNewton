@@ -13,3 +13,7 @@ NEWTON.prototype = {
 NEWTON.prototype.isNumber = function (a) {
     return !isNaN(a-0);
 };
+
+NEWTON.prototype.isVector = function (a) {
+    return (a.x !== undefined && a.y !== undefined && a.z !== undefined);
+};

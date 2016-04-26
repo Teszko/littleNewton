@@ -7,9 +7,13 @@ NEWTON.Body = function () {
 
     this.type = 'Body';
 
-    this.mass = 1;
-    this.velocity = new NEWTON.v3d();
+    this.mass = 1;                          // in kg
+    this.velocity = new NEWTON.v3d();       // in m/s
+    this.acceleration = new NEWTON.v3d();   // in m/s/s
+    this.force = new NEWTON.v3d();          // in N
 };
 
-NEWTON.Body.prototype = Object.create( NEWTON.Object3D.prototype );
+NEWTON.Body.prototype = Object.create(NEWTON.Object3D.prototype);
 NEWTON.Body.prototype.constructor = NEWTON.Body;
+
+NEWTON.Body.

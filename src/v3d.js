@@ -35,5 +35,22 @@ NEWTON.v3d.prototype.__multiplyNum = function (a) {
     this.x *= a;
     this.y *= a;
     this.z *= a;
+    
+    return this;
+};
+
+NEWTON.v3d.prototype.add = function (a) {
+    if (NEWTON.isVector(a)) {
+        NEWTON.v3d.__addVector(a);
+    }
+
+    return this;
+};
+
+NEWTON.v3d.prototype.__addVector = function (a) {
+    this.x += a.x;
+    this.y += a.y;
+    this.z += a.z;
+
     return this;
 };
