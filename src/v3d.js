@@ -18,9 +18,19 @@ NEWTON.v3d.prototype.length = function () {
 };
 
 NEWTON.v3d.prototype.set = function (x, y, z) {
-    this.x = x !== undefined ? x : this.x;
-    this.y = y !== undefined ? y : this.y;
-    this.z = z !== undefined ? z : this.z;
+    this.x = NEWTON.isNumber(a) ? x : this.x;
+    this.y = NEWTON.isNumber(a) ? y : this.y;
+    this.z = NEWTON.isNumber(a) ? z : this.z;
+
+    return this;
+};
+
+NEWTON.v3d.prototype.copy = function (A) {
+    if (NEWTON.isVector(A)) {
+        this.x = A.x;
+        this.y = A.y;
+        this.z = A.z;
+    }
 
     return this;
 };
@@ -41,9 +51,9 @@ NEWTON.v3d.prototype.__multiplyNum = function (a) {
     return this;
 };
 
-NEWTON.v3d.prototype.add = function (a) {
-    if (NEWTON.isVector(a)) {
-        NEWTON.v3d.__addVector(a);
+NEWTON.v3d.prototype.add = function (A) {
+    if (NEWTON.isVector(A)) {
+        NEWTON.v3d.__addVector(A);
     }
 
     return this;
