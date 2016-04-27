@@ -4,6 +4,8 @@
 
 NEWTON.World = function () {
     this.__bodies = [];
+    this.__fields = [];
+    this.__rubberbands = [];
 };
 
 NEWTON.World.prototype = {
@@ -11,7 +13,15 @@ NEWTON.World.prototype = {
 };
 
 NEWTON.World.prototype.add = function (obj) {
-    this.__bodies.push(obj);
+    if (obj.type === undefined) {
+        return obj;
+    }
+
+    if (obj.type == 'Body') {
+        this.__bodies.push(obj);
+        return obj;
+    }
+
     return obj;
 };
 

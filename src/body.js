@@ -26,6 +26,10 @@ NEWTON.Body.prototype.applyForce = function (F) {
 };
 
 NEWTON.Body.prototype.__forceToAcceleration = function () {
+    /**
+     * a = F / m
+     */
+
     this.acceleration.copy(this.force);
     this.acceleration.multiply(this.__inverseMass);
 };
