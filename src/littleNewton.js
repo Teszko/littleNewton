@@ -15,5 +15,5 @@ NEWTON.prototype.isNumber = function (a) {
 };
 
 NEWTON.prototype.isVector = function (a) {
-    return (a.x !== undefined && a.y !== undefined && a.z !== undefined);
+    return (a !== undefined && a.x !== undefined && a.y !== undefined && a.z !== undefined);
 };
