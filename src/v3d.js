@@ -65,10 +65,37 @@ NEWTON.v3d.prototype.add = function (A) {
     return this;
 };
 
-NEWTON.v3d.prototype.__addVector = function (a) {
-    this.x += a.x;
-    this.y += a.y;
-    this.z += a.z;
+NEWTON.v3d.prototype.__addVector = function (A) {
+    this.x += A.x;
+    this.y += A.y;
+    this.z += A.z;
+
+    return this;
+};
+
+/**
+ * subtract     this = A - B if B defined or this = this - A if not.
+ * @param A
+ * @param B     undefined or second vector
+ * @returns {NEWTON.v3d}
+ */
+
+NEWTON.v3d.prototype.subtract = function (A, B) {
+    if (NEWTON.isVector(A)) {
+        if (NEWTON.isVector(B)) {
+            this.__subtractVectors(A, B);
+        } else {
+            this.__subtractVectors(this, A);
+        }
+    }
+
+    return this;
+};
+
+NEWTON.v3d.prototype.__subtractVectors = function (A, B) {
+    this.x = A.x - B.x;
+    this.y = A.y - B.y;
+    this.z = A.z - B.z;
 
     return this;
 };
