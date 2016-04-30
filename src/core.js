@@ -4,8 +4,7 @@
 
 NEWTON.World = function () {
     this.__bodies = [];
-    this.__fields = [];
-    this.__rubberbands = [];
+    this.__force_modifiers = [];
 };
 
 NEWTON.World.prototype = {
@@ -22,12 +21,23 @@ NEWTON.World.prototype.add = function (obj) {
         return obj;
     }
 
+    if (obj.type == 'Rubberband' || obj.type == 'Repellant') {
+        this.__force_modifiers.push(obj);
+        return obj;
+    }
+
     return obj;
 };
 
 NEWTON.World.prototype.step = function (dt) {
-    for (var i=0; i<this.__bodies.length; i++) {
+    for (var i=0; i<this.__force_modifiers.length; i++) {
+        this.__force_modifiers.__applyForce(this);
+    }
 
+    for (var i=0; i<this.__bodies.length; i++) {
+        this.__bodies[i].__forceToAcceleration();
+        this.__bodies[i].__accelerationToVelocity(dt);
+        this.__bodies[i].__velocityToPosition(dt);
     }
 };
 

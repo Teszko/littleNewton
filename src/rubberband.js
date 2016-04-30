@@ -3,6 +3,8 @@
  */
 
 NEWTON.Rubberband = function (b1, b2) {
+    this.type = 'Rubberband';
+
     this.body1 = b1;
     this.body2 = b2;
 };

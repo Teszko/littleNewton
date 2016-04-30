@@ -3,6 +3,8 @@
  */
 
 NEWTON.Repellant = function (b1) {
+    this.type = 'Repellant';
+
     this.body = b1;
     this.exclude = [this.body];
 };
