@@ -15,9 +15,9 @@ NEWTON.Repellant.prototype = {
 
 NEWTON.Repellant.prototype.__applyForce = function (world) {
     for (var i=0; i<world.__bodies.length; i++) {
-        var body2 = world.__bodies[i];
-        if (world.indexOf(body2) < 0) {
-            this.__applyForce_to_bodies(body2);
+        var body = world.__bodies[i];
+        if (this.exclude.indexOf(body) < 0) {
+            this.__applyForce_to_bodies(body);
         }
     }
 };
@@ -31,5 +31,5 @@ NEWTON.Repellant.prototype.__applyForce_to_bodies = function (body2) {
 };
 
 NEWTON.Repellant.prototype.force = function (d) {
-    return 4 * d * d;
+    return 1/d;
 };

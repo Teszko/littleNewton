@@ -31,13 +31,14 @@ NEWTON.World.prototype.add = function (obj) {
 
 NEWTON.World.prototype.step = function (dt) {
     for (var i=0; i<this.__force_modifiers.length; i++) {
-        this.__force_modifiers.__applyForce(this);
+        this.__force_modifiers[i].__applyForce(this);
     }
 
     for (var i=0; i<this.__bodies.length; i++) {
         this.__bodies[i].__forceToAcceleration();
         this.__bodies[i].__accelerationToVelocity(dt);
         this.__bodies[i].__velocityToPosition(dt);
+        this.__bodies[i].__resetForce();
     }
 };
 

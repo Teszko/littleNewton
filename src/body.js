@@ -58,4 +58,10 @@ NEWTON.Body.prototype.__velocityToPosition = function (dt) {
     this.position.add(dP);
 };
 
+NEWTON.Body.prototype.__resetForce = function () {
+    this.force.x = 0;
+    this.force.y = 0;
+    this.force.z = 0;
+};
+
 // @TODO add dampening as a function of velocity

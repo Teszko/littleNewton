@@ -10,10 +10,10 @@ NEWTON.prototype = {
     constructor: NEWTON
 };
 
-NEWTON.prototype.isNumber = function (a) {
+NEWTON.isNumber = function (a) {
     return !isNaN(a-0);
 };
 
-NEWTON.prototype.isVector = function (a) {
+NEWTON.isVector = function (a) {
     return (a !== undefined && a.x !== undefined && a.y !== undefined && a.z !== undefined);
 };
