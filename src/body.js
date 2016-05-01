@@ -8,7 +8,7 @@ NEWTON.Body = function () {
     this.type = 'Body';
 
     this.mass = 1;                          // in kg
-    this.damping = 0.01;
+    this.damping = 0.5;
     this.__inverseMass = 1/this.mass;
     this.velocity = new NEWTON.v3d();       // in m/s
     this.acceleration = new NEWTON.v3d();   // in m/s/s
