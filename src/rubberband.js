@@ -22,5 +22,5 @@ NEWTON.Rubberband.prototype.__applyForce = function () {
 };
 
 NEWTON.Rubberband.prototype.force = function (d) {
-    return 0.5*d;
+    return 2 * d * d;
 };

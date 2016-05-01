@@ -8,6 +8,7 @@ NEWTON.Body = function () {
     this.type = 'Body';
 
     this.mass = 1;                          // in kg
+    this.damping = 0.01;
     this.__inverseMass = 1/this.mass;
     this.velocity = new NEWTON.v3d();       // in m/s
     this.acceleration = new NEWTON.v3d();   // in m/s/s
@@ -64,4 +65,14 @@ NEWTON.Body.prototype.__resetForce = function () {
     this.force.z = 0;
 };
 
-// @TODO add dampening as a function of velocity
+NEWTON.Body.prototype.__damping = function () {
+    /**
+     * Fw = const * v^2
+     */
+
+    var v = this.velocity.length();
+    var Fw = new NEWTON.v3d();
+    Fw.copy(this.velocity).multiply(v).multiply(this.damping).multiply(-1);
+
+    this.applyForceVector(Fw);
+};

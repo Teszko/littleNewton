@@ -35,6 +35,7 @@ NEWTON.World.prototype.step = function (dt) {
     }
 
     for (var i=0; i<this.__bodies.length; i++) {
+        this.__bodies[i].__damping();
         this.__bodies[i].__forceToAcceleration();
         this.__bodies[i].__accelerationToVelocity(dt);
         this.__bodies[i].__velocityToPosition(dt);

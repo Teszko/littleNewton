@@ -23,13 +23,13 @@ NEWTON.Repellant.prototype.__applyForce = function (world) {
 };
 
 NEWTON.Repellant.prototype.__applyForce_to_bodies = function (body2) {
-     var dV = new NEWTON.v3d();
-     dV.subtract(body2.position, this.body.position);
-     dV.multiply(this.force(dV.length())/dV.length());
-     this.body.applyForceVector(dV.multiply(-1));
-     body2.applyForceVector(dV);
+    var dV = new NEWTON.v3d();
+    dV.subtract(body2.position, this.body.position);
+    dV.multiply(this.force(dV.length())/dV.length());
+    body2.applyForceVector(dV);
+    this.body.applyForceVector(dV.multiply(-1));
 };
 
 NEWTON.Repellant.prototype.force = function (d) {
-    return 1/d;
+    return 5/d;
 };
