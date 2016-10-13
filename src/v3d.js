@@ -10,9 +10,9 @@
 NEWTON.v3d =  function (x, y, z) {
     this.type = 'v3d';
 
-    this.x = x || 0;
-    this.y = y || 0;
-    this.z = z || 0;
+    this.x = NEWTON.isNumber(x) ? x : 0;
+    this.y = NEWTON.isNumber(y) ? y : 0;
+    this.z = NEWTON.isNumber(z) ? z : 0;
 };
 
 NEWTON.v3d.prototype = {

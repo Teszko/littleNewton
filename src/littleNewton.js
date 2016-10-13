@@ -11,9 +11,10 @@ NEWTON.prototype = {
 };
 
 NEWTON.isNumber = function (a) {
-    return !isNaN(a-0);
+    return !isNaN(a-0) && a != null;
 };
 
 NEWTON.isVector = function (a) {
-    return (a !== undefined && a.x !== undefined && a.y !== undefined && a.z !== undefined);
+    // return (a !== undefined && NEWTON.isNumber(a.x) && NEWTON.isNumber(a.y) && NEWTON.isNumber(a.z));
+    return a !== undefined;
 };
